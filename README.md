@@ -14,7 +14,7 @@ $ docker run -it --rm \
 #### Alias
 Add to `~/.bashrc`
 ```bash
-alias netbeans='docker run --rm -e DISPLAY --net=host -v $HOME/.Xauthority:/home/netbeans/.Xauthority -v netbeans_data:/home/netbeans/.netbeans -v netbeans_projects:/home/netbeans/NetBeansProjects -v code:/data jimlei/alpine-netbeans'
+alias netbeans='docker run --rm -e DISPLAY --net=host -v $HOME/.Xauthority:/home/netbeans/.Xauthority -v netbeans_data:/home/netbeans/.netbeans -v netbeans_projects:/home/netbeans/NetBeansProjects -v code:/data jimlei/alpine-netbeans &'
 ```
 
 Load the changes
