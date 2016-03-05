@@ -1,13 +1,20 @@
 Alpine Linux docker image with Netbeans IDE (PHP/HTML).
 
 ```bash
-$ docker run --rm --net=host -e DISPLAY -v $(pwd)/.netbeans:/projects -v $(pwd):/data -u 1000 jimlei/alpine-netbeans &
+$ docker run -it --rm \
+    -e DISPLAY \
+    --net=host \
+    -v $HOME/.Xauthority:/home/netbeans/.Xauthority \
+    -v netbeans_data:/home/netbeans/.netbeans \
+    -v netbeans_projects:/home/netbeans/NetBeansProjects \
+    -v code:/data \
+    jimlei/alpine-netbeans &
 ```
 
 #### Alias
 Add to `~/.bashrc`
 ```bash
-alias netbeans='docker run --rm --net=host -e DISPLAY -v $(pwd)/.netbeans:/projects -v $(pwd):/data -u 1000 jimlei/alpine-netbeans &'
+alias netbeans='docker run --rm -e DISPLAY --net=host -v $HOME/.Xauthority:/home/netbeans/.Xauthority -v netbeans_data:/home/netbeans/.netbeans -v netbeans_projects:/home/netbeans/NetBeansProjects -v code:/data jimlei/alpine-netbeans'
 ```
 
 Load the changes
